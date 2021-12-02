@@ -1,12 +1,21 @@
+/*
+    Changes font of whole html file
+*/
 html {
 	font-family: "PT Sans", sans-serif;
 }
 
+/*
+    Adds background to body in `cover` format
+*/
 body {
 	background: url("../img/background.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
 
+/*
+    Adds style for all buttons
+*/
 button {
 	padding: 10px 5px;
 	border: 1px solid #000;
@@ -16,17 +25,25 @@ button {
 	cursor: pointer;
 }
 
+/*
+    Disabled button buttons
+*/
 button:disabled {
 	background-color: #676767;
 	cursor: not-allowed;
 }
 
+/*
+    This is for all hidden items
+*/
 .hidden {
-	/* display: none; */
 	opacity: 0 !important;
 	visibility: hidden;
 }
 
+/*
+    This is the main container for all elements
+*/
 .container {
 	display: flex;
 	max-width: 1280px;
@@ -37,6 +54,9 @@ button:disabled {
 	position: relative;
 }
 
+/*
+    This is for the alert popup at top left
+*/
 .alert {
 	border: 1px solid red;
 	position: fixed;
@@ -53,6 +73,9 @@ button:disabled {
 	border-radius: 20px;
 }
 
+/*
+    Main box
+*/
 .box {
 	position: relative;
 	width: 600px;
@@ -65,11 +88,17 @@ button:disabled {
 	padding: 10px 20px;
 }
 
+/*
+    This is for each column of the main box
+*/
 .column {
 	display: flex;
 	flex-direction: column;
 }
 
+/*
+    Adds style for the name input
+*/
 .text-input {
 	padding: 9px 10px;
 	border-radius: 10px;
@@ -79,30 +108,48 @@ button:disabled {
 	margin-bottom: 50px;
 }
 
+/*
+    This is a group class for submit/save buttons
+*/
 .buttons {
 	display: flex;
 	margin-top: 20px;
 }
 
+/*
+    A little change for each button in `buttons` wrapper
+*/
 .buttons button {
 	width: 100%;
 	margin: 5px;
 }
 
+/*
+    Reduce margin of prediction/accuracy
+*/
 .prediction h3 {
 	margin: 1px 0;
 }
 
+/*
+    This is for saved answer section
+*/
 .answer {
 	margin-top: 40px;
 	border: 1px #000 dotted;
 	padding: 10px 10px;
 }
 
+/*
+    A little change for clear button in saved answer section
+*/
 .answer button {
 	width: 50%;
 }
 
+/*
+    Adds style for clear choice text under radio buttons
+*/
 .clear-choice {
 	color: #e34a4a;
 	font-size: 12px;

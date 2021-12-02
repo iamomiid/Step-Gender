@@ -9,6 +9,10 @@ const genderAccuracyElement = document.getElementById('gender-accuracy')
 const answerElement = document.getElementById('answer')
 const clearAnswerElement = document.getElementById('answer-clear')
 
+/**
+ * Shows alert popup
+ * @param {string} text 
+ */
 const showAlert = (text) => {
     alertElement.innerText = text;
     alertElement.classList.remove('hidden')
@@ -18,6 +22,10 @@ const showAlert = (text) => {
     }, 5000)
 }
 
+/**
+ * Return current selection of radio buttons
+ * @returns null or selection
+ */
 const getSelection = () => {
     for (const item of radioElements) {
         if (item.checked) {
@@ -27,6 +35,10 @@ const getSelection = () => {
     return null
 }
 
+/**
+ * Applies the response to multiple elements
+ * @param {PredictionResponse} data 
+ */
 const applyPrediction = (data) => {
     genderPredictionElement.innerText = data.gender;
     genderAccuracyElement.innerText = data.probability;
@@ -38,6 +50,10 @@ const applyPrediction = (data) => {
     }
 }
 
+/**
+ * Retrieves data from localstorage
+ * @returns current saved data
+ */
 const getData = () => {
     const data = window.localStorage.getItem("db")
 
@@ -48,12 +64,20 @@ const getData = () => {
     return JSON.parse(data)
 }
 
+/**
+ * Clears selected radio button
+ */
 const clearChoiceHandler = () => {
     for (const item of radioElements) {
         item.checked = false;
     }
 }
 
+/**
+ * Gets data from api or localstorage and prints out data
+ * @param {MouseEvent} e 
+ * @returns 
+ */
 const submitHandler = async (e) => {
     e.preventDefault();
     answerElement.classList.add('hidden')
@@ -87,6 +111,11 @@ const submitHandler = async (e) => {
     }
 }
 
+/**
+ * Saves data to localstorage
+ * @param {MouseEvent} e 
+ * @returns 
+ */
 const saveHandler = (e) => {
     e.preventDefault();
     answerElement.classList.add('hidden')
@@ -110,6 +139,10 @@ const saveHandler = (e) => {
     answerElement.classList.remove('hidden')
 }
 
+/**
+ * Removes data from localstorage
+ * @param {MouseEvent} e 
+ */
 const clearAnswerHandler = (e) => {
     e.preventDefault();
     const data = getData();
@@ -119,6 +152,7 @@ const clearAnswerHandler = (e) => {
     answerElement.classList.add('hidden')
 }
 
+// Event Listeners
 submitElement.addEventListener('click', submitHandler)
 saveElement.addEventListener('click', saveHandler)
 clearChoiceElement.addEventListener('click', clearChoiceHandler)
