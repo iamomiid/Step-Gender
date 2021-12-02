@@ -19,35 +19,38 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="alert hidden" id="alert"></div>
 			<div class="box">
 				<div class="column">
 					<h1>Mr. or Ms.?</h1>
 					<label>Name</label>
-					<input type="text" class="text-input" />
+					<input id="text" type="text" class="text-input" maxlength="255" />
 					<div class="">
-						<input type="radio" value="Male" name="male" id="male" />
+						<input type="radio" value="male" name="gender" id="male" />
 						<label for="male">Male</label>
 					</div>
 					<div class="">
-						<input type="radio" value="Male" name="male" id="female" disabled />
+						<input type="radio" value="female" name="gender" id="female" />
 						<label for="female">Female</label>
 					</div>
+					<a class="clear-choice" id="clear-choice">Clear choice</a>
 					<div class="buttons">
-						<button>Submit</button><button>Save</button>
+						<button id="submit">Submit</button><button id="save">Save</button>
 					</div>
 				</div>
 				<div>
 					<h1>Prediction</h1>
 					<div class="prediction">
-						<h3 id="gender-prediction">Male</h3>
-						<h3 id="gender-accuracy">0.97</h3>
+						<h3 id="gender-prediction">-</h3>
+						<h3 id="gender-accuracy">-</h3>
 					</div>
-					<div class="answer">
+					<div class="answer hidden" id="answer">
 						<h3>Saved Answer</h3>
-						<button>Clear</button>
+						<button id="answer-clear">Clear</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		<script src="./js/index.js"></script>
 	</body>
 </html>
